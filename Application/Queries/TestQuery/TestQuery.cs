@@ -24,7 +24,7 @@ namespace Application.Queries.TestQuery
         }
         public async Task<Response<TestResponse>> Handle(TestQuery request, CancellationToken cancellationToken)
         {
-            var data = _defineAuthority.ListAsync(a => a != null, cancellationToken);
+            var data = await _defineAuthority.ListAsync(a => a != null, cancellationToken);
             return new Response<TestResponse>();
         }
     }

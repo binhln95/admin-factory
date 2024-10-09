@@ -16,5 +16,7 @@ namespace Infrastructure.Context
         }
 
         public DbSet<DefineAuthority> DefineAuthorities {get;set;}
+        public DbSet<Configuration> Configurations {get;set;}
+        public DbSet<History> Histories {get;set;}
     }
 }

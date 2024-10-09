@@ -56,6 +56,12 @@ namespace Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
+        public async Task<List<T>> GetAll(CancellationToken cancellationToken = default)
+        {
+            var res = await _dbSet.ToListAsync(cancellationToken);
+            return res;
+        }
+
         public async Task<List<T>> ListAsync(Expression<Func<T, bool>> expression, CancellationToken cancellationToken = default)
         {
             var res = await _dbSet.Where(expression).ToListAsync(cancellationToken);

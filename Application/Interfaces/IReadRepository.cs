@@ -9,6 +9,7 @@ namespace Application.interfaces
 {
     public interface IReadRepository<T> where T : class
     {
+        Task<List<T>> GetAll(CancellationToken cancellationToken = default);
         Task<T> FindById(int Id, CancellationToken cancellationToken = default);
         Task<List<T>> ListAsync(Expression<Func<T, bool>> expression, CancellationToken cancellationToken = default);
         Task<bool> AnyAsync(Expression<Func<T, bool>> expression, CancellationToken cancellationToken = default);
