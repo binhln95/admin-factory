@@ -28,3 +28,4 @@ C:\Users\binhl\OneDrive\Documents\admin\admin-factory\Application\obj\Debug\net6
 C:\Users\binhl\OneDrive\Documents\admin\admin-factory\Application\obj\Debug\net6.0\refint\Application.dll
 C:\Users\binhl\OneDrive\Documents\admin\admin-factory\Application\obj\Debug\net6.0\Application.pdb
 C:\Users\binhl\OneDrive\Documents\admin\admin-factory\Application\obj\Debug\net6.0\ref\Application.dll
+C:\Users\LBI3HC\Documents\React\AdminAPI\AdminApi\Application\obj\Debug\net6.0\Application.sourcelink.json

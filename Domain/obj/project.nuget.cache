@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Y1FY835FtSYOXLKbQpVuqFHK3aqNstVwKcw8DPe4TI7QM2Jr78gQc+tl4qgIaPiTNSfPxexfORRjOoCf12xMFA==",
+  "dgSpecHash": "j/BshkGhwik=",
   "success": true,
-  "projectFilePath": "c:\\Users\\binhl\\OneDrive\\Documents\\admin\\admin-factory\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\LBI3HC\\Documents\\React\\AdminAPI\\AdminApi\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\binhl\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+    "C:\\Users\\LBI3HC\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\LBI3HC\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.33\\microsoft.windowsdesktop.app.ref.6.0.33.nupkg.sha512",
+    "C:\\Users\\LBI3HC\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.33\\microsoft.netcore.app.ref.6.0.33.nupkg.sha512",
+    "C:\\Users\\LBI3HC\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.33\\microsoft.aspnetcore.app.ref.6.0.33.nupkg.sha512"
   ],
   "logs": []
 }

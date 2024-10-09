@@ -79,3 +79,4 @@ C:\Users\binhl\OneDrive\Documents\admin\admin-factory\AdminApi\obj\Debug\net6.0\
 C:\Users\binhl\OneDrive\Documents\admin\admin-factory\AdminApi\obj\Debug\net6.0\AdminApi.pdb
 C:\Users\binhl\OneDrive\Documents\admin\admin-factory\AdminApi\obj\Debug\net6.0\AdminApi.genruntimeconfig.cache
 C:\Users\binhl\OneDrive\Documents\admin\admin-factory\AdminApi\obj\Debug\net6.0\ref\AdminApi.dll
+C:\Users\LBI3HC\Documents\React\AdminAPI\AdminApi\AdminApi\obj\Debug\net6.0\AdminApi.sourcelink.json
