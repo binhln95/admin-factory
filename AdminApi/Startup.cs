@@ -3,6 +3,7 @@ using Domain;
 using Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.OpenApi.Models;
+using System.Reflection;
 
 namespace AdminApi
 {
