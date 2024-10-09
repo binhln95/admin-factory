@@ -1,5 +1,7 @@
-﻿using Application.Queries.TestQuery.Dto;
+﻿using Application.interfaces;
+using Application.Queries.TestQuery.Dto;
 using Application.Response;
+using Domain.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -15,9 +17,14 @@ namespace Application.Queries.TestQuery
 
     public class TestHandler : IRequestHandler<TestQuery, Response<TestResponse>>
     {
+        private readonly IReadRepository<DefineAuthority> _defineAuthority;
+        public TestHandler(IReadRepository<DefineAuthority> defineAuthority) 
+        {
+            _defineAuthority = defineAuthority;
+        }
         public async Task<Response<TestResponse>> Handle(TestQuery request, CancellationToken cancellationToken)
         {
-
+            var data = _defineAuthority.ListAsync(a => a != null, cancellationToken);
             return new Response<TestResponse>();
         }
     }
