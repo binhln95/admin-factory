@@ -1,5 +1,8 @@
-﻿using Application.Queries.GetConfiguration;
+﻿using Application.Commands.Compare;
+using Application.Queries.GetConfiguration;
 using Application.Queries.GetConfiguration.Dto;
+using Application.Queries.GetHistory;
+using Application.Queries.GetHistory.Dto;
 using Application.Queries.TestQuery;
 using Application.Queries.TestQuery.Dto;
 using Application.Response;
@@ -32,6 +35,24 @@ namespace AdminApi.Controllers
         public async Task<IActionResult> GetConfiguration([FromQuery]GetConfigurationQuery query)
         {
             var res = await _mediator.Send(query);
+
+            return Ok(res);
+        }
+
+        [HttpGet]
+        [ProducesResponseType(typeof(Response<GetHistoryResponse>), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetHistory([FromQuery] GetHistoryQuery query)
+        {
+            var res = await _mediator.Send(query);
+
+            return Ok(res);
+        }
+
+        [HttpPost]
+        [ProducesResponseType(typeof(Response<GetHistoryResponse>), StatusCodes.Status200OK)]
+        public async Task<IActionResult> Compare([FromBody] CompareCommand command)
+        {
+            var res = await _mediator.Send(command);
 
             return Ok(res);
         }

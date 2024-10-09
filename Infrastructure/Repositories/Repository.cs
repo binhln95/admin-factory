@@ -21,9 +21,10 @@ namespace Infrastructure.Repositories
             _dbSet = context.Set<T>();
         }
 
-        public Task<T> AddAsync(T entity, CancellationToken cancellationToken = default)
+        public async Task<T> AddAsync(T entity, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException();
+            await _dbSet.AddAsync(entity, cancellationToken);
+            return entity;
         }
 
         public Task<bool> AddOrUpdateAsync(IEnumerable<T> entity, CancellationToken cancellationToken = default)
@@ -36,9 +37,10 @@ namespace Infrastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<bool> AnyAsync(Expression<Func<T, bool>> expression, CancellationToken cancellationToken = default)
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> expression, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException();
+            var res = await _dbSet.AnyAsync(cancellationToken);
+            return res;
         }
 
         public Task<bool> DeleteAsync(T entity, CancellationToken cancellationToken = default)

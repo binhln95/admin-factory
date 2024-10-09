@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace Application.Response
 {
-    public class Response<T> where T : class
+    public class Response<T>
     {
         public bool IsSuccess { get; set; }
         public string Message { get; set; }
         public T Result { get; set; }
+    }
+
+    public class Response
+    {
+        public bool IsSuccess { get; set; }
+        public string Message { get; set; }
     }
 }
