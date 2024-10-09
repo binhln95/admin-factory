@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,11 @@ namespace Infrastructure.Context
 {
     public class AdminContext : DbContext
     {
+        public AdminContext(DbContextOptions<AdminContext> options) : base(options)
+        {
+            
+        }
+
+        public DbSet<DefineAuthority> DefineAuthorities {get;set;}
     }
 }

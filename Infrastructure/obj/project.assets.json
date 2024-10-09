@@ -754,40 +754,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LBI3HC\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\binhl\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LBI3HC\\Documents\\React\\AdminAPI\\AdminApi\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "c:\\Users\\binhl\\OneDrive\\Documents\\admin\\admin-factory\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\LBI3HC\\Documents\\React\\AdminAPI\\AdminApi\\Infrastructure\\Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\LBI3HC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LBI3HC\\Documents\\React\\AdminAPI\\AdminApi\\Infrastructure\\obj\\",
+      "projectPath": "c:\\Users\\binhl\\OneDrive\\Documents\\admin\\admin-factory\\Infrastructure\\Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\binhl\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\binhl\\OneDrive\\Documents\\admin\\admin-factory\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\LBI3HC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\binhl\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\LBI3HC\\Documents\\React\\AdminAPI\\AdminApi\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\LBI3HC\\Documents\\React\\AdminAPI\\AdminApi\\Application\\Application.csproj"
+            "c:\\Users\\binhl\\OneDrive\\Documents\\admin\\admin-factory\\Application\\Application.csproj": {
+              "projectPath": "c:\\Users\\binhl\\OneDrive\\Documents\\admin\\admin-factory\\Application\\Application.csproj"
             }
           }
         }
@@ -796,11 +788,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -823,26 +810,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.33, 6.0.33]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.33, 6.0.33]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.33, 6.0.33]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.427\\RuntimeIdentifierGraph.json"
       }
     }
   }
