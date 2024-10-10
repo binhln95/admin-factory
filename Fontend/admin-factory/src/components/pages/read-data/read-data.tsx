@@ -1,9 +1,15 @@
 import { useContext } from "react";
 import { AdminContext } from "../../../contexts/admin-context";
+import { getConfiguration } from "../../../api-helper/api";
 
 export const ReadData = () => {
     const context = useContext(AdminContext);
     context.setCurrentPage!('ReadData');
+
+    const CompareData = async () => {
+        const data = await getConfiguration();
+        console.log('data', data)
+    }
     return (
         <div className="row">
             <div className="col-md-6 ">
@@ -31,7 +37,7 @@ export const ReadData = () => {
                         <div className="ln_solid"></div>
                         <div className="form-group row">
                             <div className="col-md-3 col-sm-3 offset-md-9">
-                                <button type="button" className="btn btn-success">Compare</button>
+                                <button type="button" className="btn btn-success" onClick={CompareData}>Compare</button>
                             </div>
                         </div>
                     </form>

@@ -1,17 +1,20 @@
 import DataTable from 'datatables.net-react';
 import DT from 'datatables.net-dt';
-import { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Papa from 'papaparse';
 import { AdminContext } from '../../contexts/admin-context';
+import { UploadConfigFile } from '../../api-helper/api';
 DataTable.use(DT);
 
 export const UploadConfig = () => {
     const context = useContext(AdminContext);
     context.setCurrentPage!('UploadConfig');
     const [csvData, setCsvData] = useState<string[][]>([]);
+    const [file, setFile] = useState<File>();
     const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.files) {
             const file = event.target.files[0];
+            setFile(file);
             const reader = new FileReader();
             reader.onload = async () => {
                 Papa.parse<string[]>(file, {
@@ -28,6 +31,19 @@ export const UploadConfig = () => {
                 });
             };
             reader.readAsText(file);
+        }
+    }
+
+    const Save = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        e.preventDefault();
+        if (file) {
+            const formData = new FormData();
+            formData.append('file', file);
+
+            const res = await UploadConfigFile(formData);
+            if (!res) {
+                alert('upload error');
+            }
         }
     }
 
@@ -50,7 +66,7 @@ export const UploadConfig = () => {
                             </div>
                             <div className="form-group row">
                                 <div className="col-md-3 col-sm-3">
-                                    <button type="button" className="btn btn-success">Save</button>
+                                    <button type="button" className="btn btn-success" onClick={Save}>Save</button>
                                 </div>
                             </div>
                         </form>

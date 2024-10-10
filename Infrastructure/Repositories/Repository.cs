@@ -24,6 +24,7 @@ namespace Infrastructure.Repositories
         public async Task<T> AddAsync(T entity, CancellationToken cancellationToken = default)
         {
             await _dbSet.AddAsync(entity, cancellationToken);
+            await _context.SaveChanges();
             return entity;
         }
 
@@ -35,6 +36,7 @@ namespace Infrastructure.Repositories
         public async Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entity, CancellationToken cancellationToken = default)
         {
             await _dbSet.AddRangeAsync(entity, cancellationToken);
+            await _context.SaveChangesAsync();
             return entity;
         }
 
@@ -69,6 +71,12 @@ namespace Infrastructure.Repositories
         {
             var res = await _dbSet.Where(expression).ToListAsync(cancellationToken);
             return res;
+        }
+
+        public async Task<bool> RawQuery(string query, CancellationToken cancellationToken = default)
+        {
+            await _dbSet.FromSqlRaw(query).ToListAsync();
+            return true;
         }
 
         public Task<bool> UpdateAsync(T entity, CancellationToken cancellationToken = default)

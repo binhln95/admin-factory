@@ -15,5 +15,6 @@ namespace Application.interfaces
         Task<T> AddAsync(T entity, CancellationToken cancellationToken = default);
         Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entity, CancellationToken cancellationToken = default);
         Task<bool> AddOrUpdateAsync(IEnumerable<T> entity, CancellationToken cancellationToken = default);
+        Task<bool> RawQuery(string query, CancellationToken cancellationToken = default);
     }
 }

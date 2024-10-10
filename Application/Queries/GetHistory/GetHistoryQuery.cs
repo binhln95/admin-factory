@@ -26,8 +26,8 @@ namespace Application.Queries.GetHistory
         {
             var Response = new Response<List<GetHistoryResponse>>();
             var histories = await _history.ListAsync(
-                a =>  (request.MachineName == null ? true : a.MachineName == request.MachineName) && 
-                    (request.TrayName == null ? true : a.Tray == request.TrayName) && 
+                a =>  (request.MachineName == null ? true : a.MachineName.Contains(request.MachineName)) && 
+                    (request.TrayName == null ? true : a.Tray.Contains(request.TrayName)) && 
                     (request.StartDate == null ? true : a.CreatedDate >= request.StartDate) && 
                     (request.EndDate == null ? true : a.CreatedDate <= request.EndDate) && 
                     (request.Result == null ? true : a.Result == request.Result)
