@@ -1,4 +1,5 @@
 ﻿using Application.Commands.Compare;
+using Application.Commands.UploadConfig;
 using Application.Queries.GetConfiguration;
 using Application.Queries.GetConfiguration.Dto;
 using Application.Queries.GetHistory;
@@ -8,6 +9,7 @@ using Application.Queries.TestQuery.Dto;
 using Application.Response;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Text;
 
 namespace AdminApi.Controllers
 {
@@ -54,6 +56,23 @@ namespace AdminApi.Controllers
         {
             var res = await _mediator.Send(command);
 
+            return Ok(res);
+        }
+
+        [HttpPost]
+        [ProducesResponseType(typeof(Response), StatusCodes.Status200OK)]
+        public async Task<IActionResult> UploadFile(IFormFile file)
+        {
+            var csvData = new List<string[]>();
+            var res = new Response();
+            using (StreamReader stream = new StreamReader(file.OpenReadStream(), Encoding.UTF8))
+            {
+                res = await _mediator.Send(new UploadConfigCommand()
+                {
+                    Stream = stream
+                });
+                stream.Close();
+            }
             return Ok(res);
         }
     }

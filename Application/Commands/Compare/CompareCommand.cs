@@ -22,7 +22,7 @@ namespace Application.Commands.Compare
         public async Task<Response.Response<bool>> Handle(CompareCommand request, CancellationToken cancellationToken)
         {
             var Response = new Response.Response<bool>();
-            var res = await _configuration.AnyAsync(a => a.Tray == request.TrayName && a.MachineName == request.MachineName,cancellationToken);
+            var res = await _configuration.AnyAsync(a => a.Tray == request.TrayName && a.MachineName == request.MachineName, cancellationToken);
             var history = new History();
             history.MachineName = request.MachineName;
             history.Tray = request.TrayName;

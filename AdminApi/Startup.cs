@@ -36,7 +36,6 @@ namespace AdminApi
             services.AddInfrastructure();
             services.AddApplication();
             services.AddDomain();
-            services.AddHealthChecks();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
