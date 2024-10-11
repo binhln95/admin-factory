@@ -23,7 +23,11 @@ export const UploadConfig = () => {
                     complete: (result) => {
                         const parsedData = result?.data;
                         let rows: string[][] = [];
-                        parsedData.forEach((e, i) => {
+                        parsedData.forEach((e) => {
+                            if (e.length != 2) {
+                                alert('The format CSV is wrong');
+                                return;
+                            }
                             rows.push(Object.values(e));
                         });
                         setCsvData(rows);
