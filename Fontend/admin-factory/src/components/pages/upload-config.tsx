@@ -1,6 +1,6 @@
 import DataTable from 'datatables.net-react';
 import DT from 'datatables.net-dt';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Papa from 'papaparse';
 import { AdminContext } from '../../contexts/admin-context';
 import { UploadConfigFile } from '../../api-helper/api';
@@ -23,9 +23,9 @@ export const UploadConfig = () => {
                     complete: (result) => {
                         const parsedData = result?.data;
                         let rows: string[][] = [];
-                        parsedData.forEach((e) => {
-                            if (e.length != 2) {
-                                alert('The format CSV is wrong');
+                        console.log('data upload ', parsedData);
+                        parsedData.forEach((e, i) => {
+                            if (Object.values(e).length < 6 || i < 2) {
                                 return;
                             }
                             rows.push(Object.values(e));
@@ -89,8 +89,12 @@ export const UploadConfig = () => {
                             <DataTable data={csvData} className="display" options={{search: false}}>
                                 <thead>
                                     <tr>
-                                        <th>Machine</th>
+                                        <th>Order</th>
                                         <th>Tray</th>
+                                        <th>Machine Name 1</th>
+                                        <th>Machine Name 2</th>
+                                        <th>Machine Name 3</th>
+                                        <th>Note</th>
                                     </tr>
                                 </thead>
                             </DataTable>

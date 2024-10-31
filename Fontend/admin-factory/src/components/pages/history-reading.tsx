@@ -26,8 +26,15 @@ export const HistoryReading = () => {
         const response = await getHistory(machineName, tray, status, startDate, endDate);
         console.log(response);
         let history: string[][] = [];
-        response.forEach(element => {
-            history.push([element.machineName, element.tray, element.result.toString(), element.createdDate.toString()])
+        response.forEach(e => {
+            history.push([
+                e.userId,
+                e.masterFileName,
+                e.tray, 
+                e.machineName, 
+                e.result.toString(), 
+                e.createdDate.toString()
+            ])
         });
         setTableData(history);
     }
@@ -97,10 +104,12 @@ export const HistoryReading = () => {
                         <DataTable data={tableData} className="display" options={{search: false}}>
                             <thead>
                                 <tr>
-                                    <th>Machine Name</th>
-                                    <th>Tray Name</th>
-                                    <th>Status</th>
-                                    <th>Created date</th>
+                                    <th>Mã nhân viên</th>
+                                    <th>Master file</th>
+                                    <th>Mã Feeder</th>
+                                    <th>Mã linh kiện</th>
+                                    <th>Trạng thái</th>
+                                    <th>Ngày tạo</th>
                                 </tr>
                             </thead>
                         </DataTable>

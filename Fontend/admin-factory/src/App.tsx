@@ -6,7 +6,6 @@ import { Footer } from './components/footer'
 import { ReadData } from './components/pages/read-data/read-data'
 import { HistoryReading } from './components/pages/history-reading'
 import { UploadConfig } from './components/pages/upload-config'
-import { useState } from 'react'
 import { AdminContext, initializeContext } from './contexts/admin-context'
 
 function App() {
